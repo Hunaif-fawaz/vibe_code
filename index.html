@@ -4,144 +4,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunaif Fawaz Portfolio</title>
 
-<title>Student Profile</title>
-
-<!-- Google Font -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-
-/* Gradient Background */
-background: linear-gradient(135deg,#667eea,#764ba2);
-
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #f7797d, #ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-/* Profile Card */
-
-.card{
-
-background:white;
-width:320px;
-padding:30px;
-text-align:center;
-
-/* Rounded corners */
-border-radius:20px;
-
-/* Shadow */
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-
-transition:0.3s;
-
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Hover effect */
-
-.card:hover{
-
-transform:translateY(-10px);
-box-shadow:0 25px 50px rgba(0,0,0,0.3);
-
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    width: 360px;
+    padding: 35px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
-/* Profile Image */
-
-.profile-img{
-
-width:130px;
-height:130px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #667eea;
-margin-bottom:15px;
-
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
 }
 
-/* Upload Button */
-
-input[type="file"]{
-
-margin-top:10px;
-
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    padding: 5px;
+    background: linear-gradient(45deg,#667eea,#764ba2,#f7797d,#ff9a9e);
+    background-size: 300% 300%;
+    animation: glow 6s ease infinite;
+    margin-bottom: 20px;
 }
 
-/* Name */
-
-h2{
-
-font-weight:600;
-margin-bottom:5px;
-
+@keyframes glow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Stream */
-
-.stream{
-
-color:#764ba2;
-font-weight:500;
-margin-bottom:10px;
-
+h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-/* Bio */
-
-.bio{
-
-font-size:14px;
-color:#555;
-
+.stream {
+    font-weight: 500;
+    color: #764ba2;
+    margin-bottom: 15px;
 }
 
+.bio {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Social Links */
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #764ba2;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+    color: #f7797d;
+}
+
+/* Contact Button */
+.contact-btn {
+    background: #764ba2;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #f7797d;
+}
+
+/* Contact Links Pop-up */
+.contact-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
+
+.contact-links.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Tooltip */
+.contact-links a {
+    position: relative;
+    color: #764ba2;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    color: #f7797d;
+    transform: scale(1.3);
+}
+
+.contact-links a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.contact-links a:hover::after {
+    opacity: 1;
+}
 </style>
-
 </head>
 
 <body>
 
 <div class="card">
 
-<img id="profileImage" src="https://via.placeholder.com/130" class="profile-img">
+    <!-- Profile Image -->
+    <img src="images/myProfile.jpg" alt="Hunaif Fawaz" class="profile-img">
 
-<h2>Hunaif Fawaz</h2>
+    <h2>Hunaif Fawaz</h2>
+    <p class="stream">Computer Science Student</p>
 
-<p class="stream">Computer Science Student</p>
+    <p class="bio">
+        Passionate about programming, web development, and AI.
+        I enjoy building software and exploring new technologies.
+    </p>
 
-<p class="bio">
-Passionate about programming, web development and AI.
-I enjoy building software and learning new technologies.
-</p>
+    <!-- Social Links -->
+    <div class="socials">
+        <a href="https://github.com/Hunaif-fawaz" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
 
-<br>
-
-<input type="file" accept="image/*" onchange="loadImage(event)">
+    <!-- Contact Info -->
+    <div class="contact">
+        <button class="contact-btn" onclick="toggleContact()">Contact Info</button>
+        <div class="contact-links" id="contactLinks">
+            <a href="https://instagram.com/yourprofile" target="_blank" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
 
 </div>
 
 <script>
-
-function loadImage(event){
-
-var image=document.getElementById('profileImage');
-image.src=URL.createObjectURL(event.target.files[0]);
-
+// Toggle contact links with smooth animation
+function toggleContact() {
+    const links = document.getElementById('contactLinks');
+    links.classList.toggle('show');
 }
-
 </script>
 
 </body>
