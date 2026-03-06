@@ -1,127 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunaif Fawaz - Student Profile</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            transition: background 0.5s;
-            padding: 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunaif Fawaz - Student Profile</title>
 
-        .profile-card {
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            width: 320px;
-            max-width: 100%;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-        .profile-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .profile-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
+<style>
 
-        .profile-card img:hover {
-            transform: scale(1.1);
-        }
+body{
+font-family:'Roboto',sans-serif;
+background: linear-gradient(to right,#6a11cb,#2575fc);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+min-height:100vh;
+margin:0;
+padding:20px;
+}
 
-        .profile-card h2 {
-            margin: 20px 0 10px 0;
-            font-size: 24px;
-            color: #333;
-        }
+.profile-card{
+background:#fff;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+width:320px;
+padding:30px;
+text-align:center;
+transition:0.3s;
+}
 
-        .profile-card h4 {
-            margin: 0 0 15px 0;
-            font-weight: 400;
-            color: #777;
-        }
+.profile-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
 
-        .profile-card p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.5;
-        }
+/* Profile Image Border */
+.profile-img{
+width:130px;
+height:130px;
+border-radius:50%;
+padding:5px;
+background:linear-gradient(45deg,#ff4e50,#fc913a,#2575fc);
+}
 
-        .contact-icons {
-            margin-top: 20px;
-        }
+.profile-img img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+}
 
-        .contact-icons a {
-            color: #555;
-            margin: 0 12px;
-            font-size: 22px;
-            transition: transform 0.3s, color 0.3s;
-        }
+.profile-card h2{
+margin:20px 0 10px;
+color:#333;
+}
 
-        .contact-icons a:hover {
-            color: #6a11cb;
-            transform: translateY(-5px) scale(1.2);
-        }
+.profile-card h4{
+margin:0 0 15px;
+color:#777;
+font-weight:400;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 400px) {
-            .profile-card {
-                padding: 20px;
-            }
+.profile-card p{
+font-size:14px;
+color:#555;
+}
 
-            .profile-card h2 {
-                font-size: 20px;
-            }
+.contact-icons{
+margin-top:20px;
+}
 
-            .profile-card h4 {
-                font-size: 16px;
-            }
+.contact-icons a{
+color:#555;
+margin:0 12px;
+font-size:22px;
+transition:0.3s;
+}
 
-            .profile-card p {
-                font-size: 13px;
-            }
+.contact-icons a:hover{
+color:#6a11cb;
+transform:translateY(-5px) scale(1.2);
+}
 
-            .contact-icons a {
-                font-size: 20px;
-                margin: 0 8px;
-            }
-        }
-    </style>
+/* Contact Section */
+
+.contact-section{
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+text-align:center;
+width:320px;
+}
+
+.contact-section h3{
+margin-bottom:10px;
+}
+
+</style>
 </head>
-<body>
-    <div class="profile-card">
-        <img src="file:///Users/hunaif/Desktop/Picture%201.jpg" alt="Hunaif Fawaz">
-        <h2>Hunaif Fawaz</h2>
-        <h4>Computer Science</h4>
-        <p>Enthusiastic student passionate about programming, web development, and learning new technologies.</p>
 
-        <div class="contact-icons">
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/947XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
+<body>
+
+<div class="profile-card">
+
+<div class="profile-img">
+<img src="images/myProfile.jpg" alt="Hunaif Fawaz">
+</div>
+
+<h2>Hunaif Fawaz</h2>
+<h4>Computer Science Student</h4>
+
+<p>
+Full-stack developer passionate about programming, web development,
+and learning modern technologies.
+</p>
+
+<div class="contact-icons">
+
+<a href="https://www.instagram.com/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/947XXXXXXXX" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://www.linkedin.com/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<!-- Contact icon -->
+<a href="#contact">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- Contact Section -->
+
+<div id="contact" class="contact-section">
+
+<h3>Contact Me</h3>
+
+<p>Email: hunaif@example.com</p>
+<p>WhatsApp: +94 7X XXX XXXX</p>
+
+</div>
+
 </body>
 </html>
